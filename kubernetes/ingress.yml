@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: campuslink-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: campuslink.local
+      http:
+        paths:
+          - path: /trpc
+            pathType: Prefix
+            backend:
+              service:
+                name: gateway
+                port:
+                  number: 80
+          - path: /projects
+            pathType: Prefix
+            backend:
+              service:
+                name: project-service
+                port:
+                  number: 80

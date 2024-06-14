@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: campuslink-config
+data:
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  KAFKA_BROKER: "kafka:9092"
+  DB_HOST: "db"
+  DB_PORT: "3306"
+  DB_USER: "campus.user"
+  DB_PASSWORD: "password"
+  DB_NAME: "campus_link_db"
